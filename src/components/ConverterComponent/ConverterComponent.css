@@ -38,6 +38,6 @@ color: grey;
   padding: 0%;
   display: flex;
 }
-.title{
+.title, result-display{
   width: 100%;
 }

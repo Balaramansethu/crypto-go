@@ -99,7 +99,7 @@ const ConverterComponent = () => {
         
       
       <div className="result-display">
- <h2>
+        <h2>
           {searchResult.map((result) => (
             <h2 className="" key={result.id}>
               The converted  value of {result.name} is :{" "}
