@@ -65,7 +65,7 @@ const ConverterComponent = () => {
 
   return (
     <div className="container-crypt">
-      <h1>Please select a currency and cryptocurrency</h1>
+      <div className="title"><h1>Please select a currency and cryptocurrency</h1></div>
       <div className="input-container">
         <input
         className="amount-input"
