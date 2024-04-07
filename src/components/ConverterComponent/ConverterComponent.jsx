@@ -5,12 +5,12 @@ import "../ConverterComponent/ConverterComponent.css";
 import Button from "@mui/material/Button";
 
 const ConverterComponent = () => {
-  const [currencySearch, setCurrencySearch] = useState('');
-  const [cryptoSearch, setCryptoSearch] = useState('');
+  const [currencySearch, setCurrencySearch] = useState("");
+  const [cryptoSearch, setCryptoSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [currencyOptions, setCurrencyOptions] = useState([]);
   const [cryptoOptions, setCryptoOptions] = useState([]);
-  const [inputvalue, setInputvalue] = useState(0)
+  const [inputvalue, setInputvalue] = useState(0);
 
   const apiFetch = () => {
     axios
@@ -47,8 +47,8 @@ const ConverterComponent = () => {
   };
 
   const handleInputValue = (event) => {
-    setInputvalue(event.target.value)
-  }
+    setInputvalue(event.target.value);
+  };
 
   useEffect(() => {
     fetchCurrencyOptions();
@@ -64,11 +64,17 @@ const ConverterComponent = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-crypt">
       <h1>Please select a currency and cryptocurrency</h1>
       <div className="input-container">
-        <input type="text" placeholder=" Enter amount to convert" onChange={handleInputValue}/>
+        <input
+        className="amount-input"
+          type="text"
+          placeholder=" Enter amount to convert"
+          onChange={handleInputValue}
+        />
         <Select
+        className="select-currency"
           options={currencyOptions}
           onChange={handleCurrencySearch}
           placeholder="Select currency or type"
@@ -76,21 +82,28 @@ const ConverterComponent = () => {
           isSearchable
         />
         <Select
+        className="select-cryptotype"
           options={cryptoOptions}
           onChange={handleCryptoSearch}
           placeholder="Select cryptocurrency or type"
           isClearable
           isSearchable
         />
-        <Button variant="contained" onClick={apiFetch}>
+
+        <div className="btn">
+        <Button  onClick={apiFetch}>
           Submit
         </Button>
-      </div>
-      <div className="result">
-        <h2>
+        </div>
+        </div>
+        
+      
+      <div className="result-display">
+ <h2>
           {searchResult.map((result) => (
-            <h2 className="result" key={result.id}>
-              The converted value of {result.name} is : {result.current_price * inputvalue}
+            <h2 className="" key={result.id}>
+              The converted  value of {result.name} is :{" "}
+              {result.current_price * inputvalue}
             </h2>
           ))}
         </h2>
