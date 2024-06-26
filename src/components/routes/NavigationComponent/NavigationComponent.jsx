@@ -4,21 +4,22 @@ import HomeComponent from "../../HomeComponent/HomeComponent";
 import ConverterComponent from "../../ConverterComponent/ConverterComponent";
 import ContactUsComponent from "../../ContactUsComponent/ContactUsComponent";
 import AboutComponent from "../../AboutComponent/AboutComponent";
+// import '../NavigationComponent/NavigationComponent.css'
 const NavigationComponent = () => {
   return (
     <Router>
       <div className="heading">
         <Link to="/">
-          <p>Home</p>
+          <p className="pages">Home</p>
         </Link>
         <Link to="/ConvertCurrency">
-          <p>Convert Currrency</p>
+          <p className="pages">Convert Currrency</p>
         </Link>
-        <Link to="About">
-          <p>About</p>
+        <Link to="/About">
+          <p className="pages">About</p>
         </Link>
-        <Link to="contact">
-          <p>Contact us</p>
+        <Link to="/contact">
+          <p className="pages">Contact us</p>
         </Link>
       </div>
       <Routes>
